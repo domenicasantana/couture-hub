@@ -7,7 +7,7 @@ body {
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
-    font-family: 'Lato';
+    font-family: 'Marcellus', serif;
 }
 
 /* from Bulma */
@@ -21,6 +21,10 @@ body {
 
 .logo-font {
     text-transform: uppercase;
+}
+
+.main-logo {
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .main-logo-link {
