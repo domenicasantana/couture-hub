@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block content %}
-    <div class="container h-100">
+    <!-- <div class="container h-100">
         <div class="row h-100">
             <div class="col-7 ccol-md-6">
                 <h1 class="display-4 logo-font text-black">
@@ -22,6 +22,46 @@
                 </h4>
             </div>
         </div>
+    </div> -->
+
+    <div class="container-fluid h-100 d-flex flex-column">
+
+        <!-- First Row -->
+        <div class="row bg-primary text-white text-center flex-grow-1">
+            <div class="col align-self-center">
+                First Column (Full Height)
+            </div>
+        </div>
+    
+       <!-- Second Row -->
+    <div class="row flex-grow-1">
+        <div class="col-md-6 bg-success text-white text-center align-self-stretch">
+            <div class="container d-flex flex-column h-100">
+                <div class="row flex-grow-1">
+                    <div class="col bg-success text-white text-center align-self-center">
+                        Second Column (Full Height)
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 bg-warning text-white text-center align-self-stretch">
+            <div class="container d-flex flex-column h-100">
+                <div class="row flex-grow-1">
+                    <div class="col bg-warning text-white text-center align-self-center">
+                        Third Column (Full Height)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <!-- Third Row -->
+        <div class="row bg-danger text-white text-center flex-grow-1">
+            <div class="col align-self-center">
+                Another First Column (Full Height)
+            </div>
+        </div>
+    
     </div>
     
 {% endblock %}
