@@ -15,6 +15,12 @@ body {
     background-size: cover;
 }
 
+.btn-custom {
+    background-color: #8590c0; /* Your desired color */
+    color: white; /* Text color */
+    min-width: 260px;
+  }
+
 /* from Bulma */
 .icon {
     align-items: center;
@@ -34,12 +40,6 @@ body {
 
 .main-logo-link {
     width: fit-content;
-}
-
-.shop-now-button {
-    background: black;
-    color: white;
-    min-width: 260px;
 }
 
 .btn-black {
