@@ -20,8 +20,18 @@ body {
     color: white; /* Text color */
     min-width: 260px;
   }
+.fourthrow {
+    background-color: #404565; /* Your desired color */
+    
+}
 
-  .col-md-6.thirdtext.text-white.text-center.align-self-stretch {
+.testimonial-text {
+    padding: 10%; /* Add padding around the paragraph */
+    text-align: center; /* Center the text inside the paragraph */
+}
+
+
+.col-md-6.thirdtext.text-white.text-center.align-self-stretch {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -31,7 +41,37 @@ body {
     width: 100%; /* Make the image take up the full width of the parent div */
     height: 100%; /* Make the image take up the full height of the parent div */
     object-fit: cover; /* Maintain aspect ratio and cover the parent div */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   }
+
+/* Typing effect */
+
+@keyframes typing {
+    from {
+        width: 0; /* Start with zero width */
+    }
+    to {
+        width: 100%; /* End with full width */
+    }
+}
+
+.typing-effect {
+    overflow: hidden; /* Hide overflow to create typing effect */
+    white-space: nowrap; /* Prevent text from wrapping */
+    border-right: 3px solid white; /* Create cursor blinking effect */
+    text-transform: lowercase; /* Convert text to lowercase (or uppercase if needed) */
+    animation: typing 3s steps(20) infinite, blink-caret 0.75s step-end infinite; /* Apply animations */
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent; /* Hide the caret */
+    }
+    50% {
+        border-color: white; /* Show the caret */
+    }
+}
+
   
 
 /* background colour third col */
@@ -129,5 +169,13 @@ body {
 
     body {
         height: calc(100vh - 116px);
+    }
+    .col-md-6.thirdtext.text-white.text-center.align-self-stretch img {
+        margin-top: 10%;
+        margin-bottom: 10%; /* Maintain aspect ratio and cover the parent div */
+      }
+
+    .firstrow {
+        margin-top: 5%;
     }
 }
