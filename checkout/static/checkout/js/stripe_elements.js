@@ -115,7 +115,6 @@ form.addEventListener('submit', function(ev) {
         });
     }).fail(function () {
         // just reload the page, the error will be in django messages
-        console.log("Error sendind data to cache_checkout_data.");
         location.reload();
     })
 });
