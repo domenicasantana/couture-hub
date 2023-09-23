@@ -3,6 +3,8 @@ from django.urls import reverse_lazy, reverse
 from django.contrib import messages
 from .models import Article, Comment
 from django.db.models import Q
+from django.contrib.auth.decorators import login_required
+from . import forms
 
 
 
@@ -33,3 +35,32 @@ def article_list(request):
     }
     return render(request, "blog/article_list.html", context)
 
+
+# View to display seleceted article
+def article_detail(request, slug):
+    article = Article.objects.get(slug=slug)
+    total_likes = article.total_likes()
+# In order to pass the liked to the frontend set it to false if the user has liked this article already
+    liked = False
+    if article.likes.filter(id=request.user.id).exists():
+        liked = True
+    return render(request, 'blog/article_detail.html', {'article': article,
+                                                            'total_likes': total_likes,
+                                                            'liked': liked})
+
+
+# View to create article, only allow this to logged in users
+@login_required()
+def article_create(request):
+    if request.method == 'POST':
+        form = forms.CreateArticle(request.POST, request.FILES)
+        if form.is_valid():
+            # save article but don't commit to database
+            instance = form.save(commit=False)
+            # set the author field to the loggged in user
+            instance.author = request.user
+            instance.save()
+            return redirect('blog:list')
+    else:
+        form = forms.CreateArticle()
+    return render(request, 'blog/article_create.html', {'form': form})
