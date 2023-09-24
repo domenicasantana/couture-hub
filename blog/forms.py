@@ -14,22 +14,19 @@ class CreateArticle(forms.ModelForm):
         ]
         widgets = {
             'title': TextInput(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;',
+                'class': "form-control mx-auto",
                 'placeholder': 'Title'
                 }),
             'body': Textarea(attrs={
-                'class': "form-control",
-                'style': 'max-width: 800px;',
+                'class': "form-control mx-auto",
                 'placeholder': 'Your awesome article here'
                 }),
             'slug': TextInput(attrs={
-                'class': "form-control",
-                'style': 'max-width: 300px;',
+                'class': "form-control mx-auto",
                 'placeholder': 'Slug'
                 }),
             'thumb': FileInput(attrs={
-                'class': "form-control", 
+                'class': "form-control mx-auto custom-thumb-input", 
                 'style': 'max-width: 300px;',
                 }),
 
@@ -46,22 +43,22 @@ class ArticleForm(forms.ModelForm):
         ]
         widgets = {
             'title': TextInput(attrs={
-                'class': "form-control",
+                'class': "form-control mx-auto",
                 'style': 'max-width: 300px;',
                 'placeholder': 'Title'
                 }),
             'body': Textarea(attrs={
-                'class': "form-control",
+                'class': "form-control mx-auto",
                 'style': 'max-width: 800px;',
                 'placeholder': 'Your awesome article here'
                 }),
             'slug': TextInput(attrs={
-                'class': "form-control",
+                'class': "form-control mx-auto",
                 'style': 'max-width: 300px;',
                 'placeholder': 'Slug'
                 }),
             'thumb': FileInput(attrs={
-                'class': "form-control", 
+                'class': "form-control mx-auto", 
                 'style': 'max-width: 300px;',
                 }),
 
@@ -75,7 +72,7 @@ class CommentForm(forms.ModelForm):
         ]
         widgets = {
             'content': Textarea(attrs={
-                'class': "form-control",
+                'class': "form-control mx-auto",
                 'style': 'max-width: 800px;',
                 'placeholder': 'Your awesome comment here'
                 }),
