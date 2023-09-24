@@ -14,9 +14,9 @@
         <span class="flex-grow flex flex-col pl-4">
             <p>Written on: {{ article.date }}</p>
             <p>By: {{ article.author }}</p>
-            {% if user.is_authenticated and user.id == article.author.id  %}
-            <a href="" class="btn btn-success">Edit</a>
-            <a href="" class="btn btn-danger">Delete</a>
+            {% if user.is_authenticated and user.username == "andrea123" %}
+            <a href="{% url 'blog:article_edit' slug=article.slug %}" class="btn btn-success">Edit</a>
+            <a href="{% url 'blog:article_delete' slug=article.slug %}" class="btn btn-danger">Delete</a>
             {% endif %}
           </span>
           <hr>
@@ -25,7 +25,7 @@
               <div class="col-10">
                  <br>
                  <h3><i class="fa fa-solid fa-heart"></i> Likes: {{ total_likes }}</h3>
-                 <form action="" method="post">
+                 <form action="{% url 'blog:like_post' slug=article.slug %}" method="post">
                   {% csrf_token %}
                   {% if user.is_authenticated %}
                     {% if liked %}
@@ -48,9 +48,9 @@
                 <h4>Add your comment:</h4>
                 {% if user.is_authenticated and not article.comments.all %}
                  <p>No comments yet... Why not be the first?</p>
-                 <a href="">Add comment: </a>
+                 <a href="{% url 'blog:add_comment' slug=article.slug %}">Add comment: </a>
                  {% elif user.is_authenticated  %}
-                 <a href="">Add comment: </a>
+                 <a href="{% url 'blog:add_comment' slug=article.slug %}">Add comment: </a>
                  {% else %}
                  <p>You need to be <a href="{% url 'accounts:login' %}">logged in</a>  to comment...</p>
                  {% endif %}

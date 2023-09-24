@@ -4,7 +4,10 @@ from django.contrib import messages
 from .models import Article, Comment
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
+from django.http import HttpResponse, HttpResponseRedirect
 from . import forms
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+
 
 
 
@@ -24,7 +27,7 @@ def article_list(request):
             query = request.GET['q']
             if not query:
                 messages.error(request, "You didn't enter any search criteria!")
-                return redirect(reverse('articles:list'))
+                return redirect(reverse('blog:list'))
             
             queries = Q(title__icontains=query) | Q(body__icontains=query)
             articles = articles.filter(queries)
@@ -64,3 +67,51 @@ def article_create(request):
     else:
         form = forms.CreateArticle()
     return render(request, 'blog/article_create.html', {'form': form})
+
+
+# View to like article, if the post is already liked, remove it 
+def LikeView(request, slug):
+    post = get_object_or_404(Article, id=request.POST.get('article_id'))
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('blog:detail', args=[str(slug)]))
+
+
+# View to add comment, only for logged in users
+class AddCommentView(CreateView):
+    model = Comment
+    template_name = 'blog/add_comment.html'
+    form_class = forms.CommentForm
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.article_slug = self.kwargs['slug']
+        article = Article.objects.get(slug=self.kwargs['slug'])
+        form.instance.post_id = article.id
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse_lazy('blog:detail', kwargs={'slug': self.kwargs['slug']})
+
+
+# View to update article, restricted for the creators of the article in the frontend
+class UpdateArticleView(UpdateView):
+    model = Article
+    template_name = 'blog/article_edit.html'
+    form_class = forms.ArticleForm
+
+    def get_success_url(self):
+        return reverse_lazy('blog:detail', kwargs={'slug': self.kwargs['slug']})
+
+# View to delete article, restricted for the creators of the article in the frontend
+class DeleteArticleView(DeleteView):
+    model = Article
+    template_name = 'blog/article_delete.html'
+
+    def get_success_url(self):
+        return reverse_lazy('blog:list')
