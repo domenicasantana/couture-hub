@@ -9,18 +9,20 @@
 
 
 {% block content %}
-<div class="container">
-<div class="max-w-lg mx-auto">
-    <h1>Log in</h1>
-<form action="{% url 'accounts:login' %}" method="post">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% if request.GET.next %}
-    <input type="hidden" name="next" value="{{ request.GET.next }}">
-    {% endif %}
-    <button class="btn btn-secondary mt-3" type="submit" >Login</button>
-</form>
-</div>
+<div class="fashion-container">
+    <div class="max-w-lg mx-auto">
+        <h1>Log in</h1>
+        <form action="{% url 'accounts:login' %}" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            {% if request.GET.next %}
+            <input type="hidden" name="next" value="{{ request.GET.next }}">
+            {% endif %}
+            <button class="btn btn-secondary mt-3" type="submit">Login</button>
+        </form>
+    </div>
+    <br>
+    <h3>Don't an account yet? Then <a href="{% url 'accounts:signup' %}">Sign Up</a> here!</h3>
 </div>
 
 {% endblock %}

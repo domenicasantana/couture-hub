@@ -11,5 +11,14 @@
                 Store
             </a>
         </li>
+        {% if user.is_authenticated %}
+        <li class="nav-item dropdown">
+            <form class="form-inline my-2 my-lg-0" action="{% url 'accounts:logout' %}" method="post">
+                {% csrf_token %}
+                <button class="btn btn-secondary mx-2 mt-3 mb-3" type="submit">Log Out
+                </button>
+              </form>
+        </li>
+        {% endif %}
     </ul>
 </div>

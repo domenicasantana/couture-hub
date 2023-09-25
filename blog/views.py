@@ -69,7 +69,8 @@ def article_create(request):
     return render(request, 'blog/article_create.html', {'form': form})
 
 
-# View to like article, if the post is already liked, remove it 
+# View to like article, if the post is already liked, remove it
+@login_required 
 def LikeView(request, slug):
     post = get_object_or_404(Article, id=request.POST.get('article_id'))
     liked = False
@@ -106,7 +107,7 @@ class UpdateArticleView(UpdateView):
     form_class = forms.ArticleForm
 
     def get_success_url(self):
-        return reverse_lazy('blog:detail', kwargs={'slug': self.kwargs['slug']})
+        return reverse_lazy('blog:list')
 
 # View to delete article, restricted for the creators of the article in the frontend
 class DeleteArticleView(DeleteView):

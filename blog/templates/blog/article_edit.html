@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="fashion-container">
 <div class="max-w-lg mx-auto">
     <h2>Edit your awesome article</h2>
     <form method="post" enctype="multipart/form-data">
@@ -8,5 +9,6 @@
         {{ form.as_p  }}
         <button class="btn btn-secondary mt-3" type="submit">Update</button>
     </form>
+</div>
 </div>
 {% endblock %}

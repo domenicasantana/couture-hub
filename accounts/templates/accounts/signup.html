@@ -7,15 +7,18 @@
 {% bootstrap_messages %}
 
 {% block content %}
-<div class="container">
-<div class="max-w-lg mx-auto">
+<div class="fashion-container">
+    <div class="max-w-lg mx-auto">
         <h1>Sign Up</h1>
-    <form action="/accounts/signup/" method="post">
-        {% csrf_token %}
-        {% bootstrap_form form %}
-        <button type="submit" class="btn btn-secondary mt-3">Signup</button>
-    </form>
-</div>
+        <form action="/accounts/signup/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <button type="submit" class="btn btn-secondary mt-3">Signup</button>
+        </form>
+    </div>
+    <br>
+    <h3>Already have an account? Then <a href="{% url 'accounts:login' %}">Log in</a> here!</h3>
+
 </div>
 
 {% endblock %}
