@@ -285,3 +285,11 @@ body {
     margin: 0 auto;   /* Center-align the container */
 }
 
+/* Stylish HR */
+.fashion-hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(to right, #ff5f6d, #ffc371);
+    margin: 20px auto;
+    width: 80%;
+}
