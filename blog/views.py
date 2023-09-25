@@ -32,6 +32,11 @@ def article_list(request):
             queries = Q(title__icontains=query) | Q(body__icontains=query)
             articles = articles.filter(queries)
 
+            # Check if articles queryset is empty
+        if not articles:
+            messages.info(request, "Your search didn't return any results.")
+            return redirect(reverse('blog:list'))
+
     context = {
         'articles': articles,
         'search_term': query,
