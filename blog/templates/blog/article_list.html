@@ -45,6 +45,8 @@
 {% else %}
 <div class="fashion-container">
 <h1>Whoops! Our blog is restricted to registered users, but dont worry! It's free to <a href="{% url 'accounts:signup' %}">Sign Up</a></h1>
+<hr class="fashion-hr">
+<h1>Already have an account? <a href="{% url 'accounts:signup' %}">Log in</a> here!</h1>
 </div>
 <br>
 {% endif %}

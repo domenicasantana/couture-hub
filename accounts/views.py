@@ -10,7 +10,7 @@ def signup_view(request):
             user = form.save()
             # Log user in
             login(request, user)
-            return redirect('articles:list')
+            return redirect('blog:list')
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
