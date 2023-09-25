@@ -47,22 +47,17 @@
           </div>
           <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
               <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                {% if request.user.is_superuser %}
                   <li class="list-inline-item dropdown">
-                      <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="text-black nav-link" href="{% url 'blog:create' %}" >
                           <div class="text-center">
-                              <div><i class="fas fa-user fa-lg"></i></div>
-                              <p class="my-0">My Account</p>
+                              <div><i class="fas fa-pen fa-lg"></i></div>
+                              <p class="my-0">Write new article</p>
                           </div>
-                      </a>
-                      <div class="dropdown-menu border-0" aria-labelledby="user-options">
-                          {% if request.user.is_authenticated %}
-                              {% if request.user.is_superuser %}
-                                  <a href="" class="dropdown-item">Product Management</a>
-                              {% endif %}
-                              <a href="" class="dropdown-item">My Profile</a>
-                          {% endif %}
+                      </a>   
                       </div>
                   </li>
+                  {% else %}
                   <li class="list-inline-item">
                       <a class="{% if total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_bag' %}">
                           <div class="text-center">
@@ -77,6 +72,7 @@
                           </div>
                       </a>
                   </li>
+                  {% endif %}
               </ul>
           </div>
       </div>
@@ -91,7 +87,7 @@
       </div>
       <div id="delivery-banner" class="row text-center">
         <div class="col bg-black text-white">
-            <h4 class="logo-font my-1">Elevate Your Image, Embrace Your Style{{ free_delivery_threshold }}!</h4>                
+            <h4 class="logo-font my-1">Elevate Your Image, Embrace Your Style!</h4>                
         </div>            
     </div>
   </header>
