@@ -1,39 +1,55 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Couture Hub website
 
-Welcome,
+![Couture Hub]()
 
-This is the Code Institute student template for Codeanywhere. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+[Visit the live site]().
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **May 11th, 2023**
+The purpose of this application is to help users experience a fashion stylist's digital hub, with useful information of the services that are available, ebooks  while also being able to post articles, like them through the comment section.
 
-## Codeanywhere Reminders
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
+* The Home page uses a striking image of a well-curated wardrobe takes center stage It not only adds visual appeal but also entices visitors to discover more. The "Products" button serves as an enticing call to action, guiding users to explore all the website offerings products and services.
+*  The website has a blog in which all users can create edit or delete their own articles, like and comment on other perople's articles if logged in.
+* All users with an account have acces to an e-commerce store where they can buy ebooks and services .
+* If the first time user doesn't want to sign-up he can still read the articles.
 
-`python3 -m http.server`
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+***
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## User Experience
 
-`http_server`
+### New User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+* As a new user, I want to be able to easily access a wealth of fashion expertise on the website. Whether I need fashion inspiration, tips, or want to enhance my style, the ebooks and services.
+* I want to be able to access short fashion articles that can be read in a short amount of time.
+* As a new user I want to be able to explore the different stylist services , designated to cater to my unique fashion sense, ot only that but be able to buy her ebook which adds a personalized touch . 
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+### Returning User Stories
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* As a returning user, I want to be able to quickly access the future articlesto stay updated with the ever-evolving world of fashion.
+* As a returning user, I want to be able to like and comment on the articles.
+* As a returning user I want to be able to purchase more custom services  and receive special offers .
 
-To log into the Heroku toolbelt CLI:
+## Design
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+The site uses the Bootstrap framework. I used a light summer color palette with purple hues .
+ It's a visual representation of elegance and expertise, inviting all visitors to explore the content, services, and products in a space that feels like a serene summer day.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Colours and Shades
 
----
+* The site uses a light shade of grey for the site’s header and footer, and a darker shade for the LogIn/SignUp buttons.
 
-Happy coding!
+* The color of the background is white and text is black to reinforce the contrast and make it easier to read for the user.
+
+* Colours are used consistently in association with a particular type of task:
+
+* Dark grey is used on the login / signup buttons.
+
+* Other buttons in the site use the same black color as the logo
+
+* Bootstrap's light blue (Primary) is used on the Read article button / and for the articles with the category "Training".
+
+* Bootstrap's green (Success) is used for the articles with the category "Nutrition" and edit button.
+
+* Bootstrap's red (danger) is used for the delete button.
+
+
