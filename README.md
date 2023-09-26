@@ -7,7 +7,7 @@
 The purpose of this application is to help users experience a fashion stylist's digital hub, with useful information of the services that are available, ebooks  while also being able to post articles, like them through the comment section.
 
 
-* The Home page uses a striking image of a well-curated wardrobe takes center stage It not only adds visual appeal but also entices visitors to discover more. The "Products" button serves as an enticing call to action, guiding users to explore all the website offerings products and services.
+* The Home page uses a striking image of a well-curated wardrobe takes center stage It not only adds visual appeal but also entices visitors to discover more. The "Our Products" button serves as an enticing call to action, guiding users to explore all the website offerings products and services.
 *  The website has a blog in which all users can create edit or delete their own articles, like and comment on other perople's articles if logged in.
 * All users with an account have acces to an e-commerce store where they can buy ebooks and services .
 * If the first time user doesn't want to sign-up he can still read the articles.
@@ -36,20 +36,23 @@ The site uses the Bootstrap framework. I used a light summer color palette with 
 
 #### Colours and Shades
 
-* The site uses a light shade of grey for the site’s header and footer, and a darker shade for the LogIn/SignUp buttons.
+* The site uses a white colour for the site’s header and for the testimony section which acts as a footerthe colour is purple navy .
 
-* The color of the background is white and text is black to reinforce the contrast and make it easier to read for the user.
+* The color of the background is white and text is black for the menu and header while white is used in other partd of the website to reinforce the contrast and make it easier to read for all users.
 
-* Colours are used consistently in association with a particular type of task:
+* Dark shade of grey is used on the login page  / signup page.
 
-* Dark grey is used on the login / signup buttons.
+* Other buttons in the site use dark shade of grey .
 
-* Other buttons in the site use the same black color as the logo
+* Shopping Bag page uses black shade for text and black and white colour for buttons.
 
-* Bootstrap's light blue (Primary) is used on the Read article button / and for the articles with the category "Training".
+* Bootstrap's light blue (Primary) is used on the Updated button on the shopping bag page and the color red is used  for remove button on the same page.
 
-* Bootstrap's green (Success) is used for the articles with the category "Nutrition" and edit button.
+* Bootstrap's green (Success) is used for top border color shopping cart and page.
 
-* Bootstrap's red (danger) is used for the delete button.
+* Bootstrap's red, orange  is used for the lines surrounding each article on the blog page.
+
+* Bootstrap's blue is used for read button on blog page.
+
 
 
