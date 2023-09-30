@@ -125,6 +125,8 @@ def checkout_success(request, order_number):
     message = render_to_string('checkout/order_confirmation_email.html', {
         'order': order,
     })
+    # Create the plain text version of the email (optional)
+    plain_message = strip_tags(message)
 
 
     # Send the email
