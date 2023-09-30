@@ -1,1 +1,1 @@
-web: gunicorn couture_hub.wsgi.application
+web: gunicorn couture_hub.wsgi:application
