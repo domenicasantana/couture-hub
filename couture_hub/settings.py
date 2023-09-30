@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-+zhl1wh3m#q59xj50fy-1bu04vi4^@!*tt@c7t6#=jvj-0s3(0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['couture-hub.herokuapp.com','localhost']
+ALLOWED_HOSTS = ['couture-hub-d0fb29d40e9a.herokuapp.com','localhost']
 
 
 # Application definition
