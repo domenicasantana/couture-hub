@@ -77,4 +77,37 @@ The site uses the Bootstrap framework. I used a light summer color palette with 
 * [Pexels](https://www.pexels.com) I used a photo from Pexels for the second product/service (Photo by Liza Summer: https://www.pexels.com/photo/anonymous-woman-choosing-outfit-in-store-6347546/)
 
 
+## Wireframes
 
+The site is responsively designed to adapt to the user's viewing device.
+
+### Desktop view wireframe
+
+ ![desktop wireframe]()
+
+
+### Mobile view wireframe
+
+ ![Mobile wireframe]()
+
+
+## Home Desktop view
+
+ ![Home desktop view](media/home_desktop_view.png)
+
+ ## Mobile Home view
+
+ ![Mobile Home view](media/home_mobile_view.png)
+ 
+ ## Log in desktop view
+
+ ![login desktop view](media/login_desktop_view.png)  
+
+  ## Log in mobile view
+
+ ![login mobile view](media/login_mobile_view.png)  
+
+ ## Sign up mobile view
+
+ ![Sign up mobile view](media/signup_mobile_view.png)  
+***
