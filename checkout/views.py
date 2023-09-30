@@ -6,6 +6,9 @@ from .forms import OrderForm
 from .models import Order, OrderLineItem
 from products.models import Product
 from bag.contexts import bag_contents
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
 
 import stripe
 import json
@@ -112,6 +115,21 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+    
+    # Send confirmation email
+    subject = f'Order Confirmation - {order_number}'
+    from_email = 'your-email@gmail.com'  # Use your sender email
+    recipient_list = [order.email]
+
+    # Load the email template (you need to create this template)
+    message = render_to_string('checkout/order_confirmation_email.html', {
+        'order': order,
+    })
+
+
+    # Send the email
+    send_mail(subject, plain_message, from_email, recipient_list, html_message=message)
+
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
         email will be sent to {order.email}.')
