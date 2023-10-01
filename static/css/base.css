@@ -11,7 +11,7 @@ body {
 }
 
 .firstrow {
-    background: url('/media/clothes-bodypicture.jpg') no-repeat center center fixed; 
+    background: url('/media/clothes-bodypicture.webp') no-repeat center center fixed; 
     background-size: cover;
 }
 
