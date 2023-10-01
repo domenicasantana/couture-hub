@@ -9,8 +9,6 @@ from . import forms
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
-
-
 # View to list all existing articles and order them by date
 def article_list(request):
     articles = Article.objects.all().order_by("date")
@@ -26,9 +24,10 @@ def article_list(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('blog:list'))
-            
+
             queries = Q(title__icontains=query) | Q(body__icontains=query)
             articles = articles.filter(queries)
 
@@ -48,13 +47,15 @@ def article_list(request):
 def article_detail(request, slug):
     article = Article.objects.get(slug=slug)
     total_likes = article.total_likes()
-# In order to pass the liked to the frontend set it to false if the user has liked this article already
+# In order to pass the liked to the frontend set it to false
+# if the user has liked this article already
     liked = False
     if article.likes.filter(id=request.user.id).exists():
         liked = True
-    return render(request, 'blog/article_detail.html', {'article': article,
-                                                            'total_likes': total_likes,
-                                                            'liked': liked})
+    return render(
+        request, 'blog/article_detail.html', {'article': article,
+                                              'total_likes': total_likes,
+                                              'liked': liked})
 
 
 # View to create article, only allow this to logged in users
@@ -75,7 +76,7 @@ def article_create(request):
 
 
 # View to like article, if the post is already liked, remove it
-@login_required 
+@login_required
 def LikeView(request, slug):
     post = get_object_or_404(Article, id=request.POST.get('article_id'))
     liked = False
@@ -102,10 +103,12 @@ class AddCommentView(CreateView):
         return super().form_valid(form)
 
     def get_success_url(self):
-        return reverse_lazy('blog:detail', kwargs={'slug': self.kwargs['slug']})
+        return reverse_lazy(
+             'blog:detail', kwargs={'slug': self.kwargs['slug']})
 
 
-# View to update article, restricted for the creators of the article in the frontend
+# View to update article, restricted for the
+# creators of the article in the frontend
 class UpdateArticleView(UpdateView):
     model = Article
     template_name = 'blog/article_edit.html'
@@ -114,7 +117,9 @@ class UpdateArticleView(UpdateView):
     def get_success_url(self):
         return reverse_lazy('blog:list')
 
-# View to delete article, restricted for the creators of the article in the frontend
+
+# View to delete article, restricted
+# for the creators of the article in the frontend
 class DeleteArticleView(DeleteView):
     model = Article
     template_name = 'blog/article_delete.html'

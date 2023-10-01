@@ -1,4 +1,10 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render,
+    redirect,
+    reverse,
+    get_object_or_404,
+    HttpResponse
+)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -12,6 +18,7 @@ from django.utils.html import strip_tags
 
 import stripe
 import json
+
 
 @require_POST
 def cache_checkout_data(request):
@@ -64,17 +71,16 @@ def checkout(request):
                             quantity=item_data,
                         )
                         order_line_item.save()
-                    
+
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
-                        "Please call us for assistance!")
-                    )
+                    messages.error(request, ("One of the products in your bag wasn't found in our database."
+                                             "Please call us for assistance!"))
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
@@ -82,7 +88,8 @@ def checkout(request):
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                    request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -98,7 +105,7 @@ def checkout(request):
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing.\
-        Did you forget to set it in your environment?') 
+        Did you forget to set it in your environment?')
 
     template = 'checkout/checkout.html'
     context = {
@@ -109,13 +116,14 @@ def checkout(request):
 
     return render(request, template, context)
 
+
 def checkout_success(request, order_number):
     """
     Handle successful checkouts
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    
+
     # Send confirmation email
     subject = f'Order Confirmation - {order_number}'
     from_email = 'your-email@gmail.com'  # Use your sender email
@@ -128,9 +136,9 @@ def checkout_success(request, order_number):
     # Create the plain text version of the email (optional)
     plain_message = strip_tags(message)
 
-
     # Send the email
-    send_mail(subject, plain_message, from_email, recipient_list, html_message=message)
+    send_mail(subject, plain_message,
+              from_email, recipient_list, html_message=message)
 
     messages.success(request, f'Order successfully processed! \
         Your order number is {order_number}. A confirmation \
