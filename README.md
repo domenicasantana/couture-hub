@@ -363,10 +363,18 @@ I noticed that this tests scores vary from time to time and depends on external 
 
  * [Nu Html Checker](https://validator.w3.org/) to test HTML
 
- ![HTML validator]()
+ ![HTML validator](media/html-validator.png)
 
  
- * [Pycodestyle](https://pypi.org/project/pycodestyle/) to test python files
+ * [Code Institute Python Validator](https://pypi.org/project/pycodestyle/) to test python
+
+ ![Python Validator Login app](media/login-python-validator.png) 
+
+ ![Python Validator Checkout app](media/checkout-python-validator.png)
+
+ ![Python Validator Bag app](media/bag-python-validator.png) 
+
+
 
 
 ## DEPLOYMENT
