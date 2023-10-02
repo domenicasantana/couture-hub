@@ -150,7 +150,7 @@ On the other hand, regular users are granted read-only access to articles. They 
 
 * Access to the blog is for users only . Inside of the blog page there will be a search bar(search for specific topics inside of the blog) allocated at the bottom of the page .
 
-![Search bar](media/search_bar.png)
+![Search bar](media/users-searchbar-blog.png)
 
 
 * If the person is not registered they will have this message show up .
