@@ -183,7 +183,7 @@ This is another key feature of Couture Hub website ,it has not only a blog page 
 ![products list](media/store-products-view.png)
 
 
-### Shopping bag
+### Shopping Bag
 
 The shopping bag feature is a central element of the platform store, allowing customers to easily manage their selections. With this feature, customers can change(update) the quantity of items in their bag and remove items if they no longer wish to purchase. It offers a seamless and user-friendly shopping experience.
 
@@ -200,11 +200,13 @@ The checkout page has a form which will collect all the customers necessary data
 ---
 ***
 
-## Database Design
+## Website Database Design
 
-TrueFit uses a SQL database. Data is divided into seven collections, with the following schema:
+Couture Hub website uses a .. database. Data is divided into seven collections, with the following schema:
 
-![Datbase diagram](media/updated_data_schema.png)
+![Database diagram](media/data-wireframe-one.png)
+![Database diagram](media/data-wireframe-second.png)
+
 
 ***
 
@@ -213,27 +215,29 @@ TrueFit uses a SQL database. Data is divided into seven collections, with the fo
 The following features could be added in the future, given more development time:
 
 
-### 1. Account Management Tools
+### 1. Admin Account :
 
-* Helpful account management tools could be provided, such as the ability to update usernames, email addresses and passwords.
-* A password recovery by email function could also be provided. Django authentication tools could be used for this.
+* the admin account could have more options to updated other users details .
 
-### 2. Article Filters
 
-* The ability for all users to filter the articles by category.
+### 2. User Profiles and Preferences:
 
- 
+* The ability for all users profiles can create and customize their profiles, including a wishlist.
 
-### 4. Chat functionality
+### 3. Advanced Search and Filtering:
 
-* The ability to chat with other users of the blog. Django channels could be used for this.
+* Implementing full-text search and filters on the website website(not only on the blog page) will significantly improve the user's ability to find specific items quickly and easily.
 
-### 5. Code optimization and refactoring
 
-* This was my first major project using Python and Django, so there are a few areas where I feel the code could be made neater and more efficient.
-* In particular, replacing some function based views with class based view
+### 4. Chat Within Comments Section:
 
-***
+*  Enhance user interactions by allowing them to engage in real-time conversations within the comments section. This interactive feature not only improves user engagement but also creates a dynamic and social shopping experience, where users can connect.
+
+### 5.Social Media Integration: 
+
+* Implementing social media authentication for login or registration(social media APIs, implementing OAuth for authentication, and building sharing functionality) This will help to gather valuable user data from social media profiles to personalize recommendations and improve marketing strategies.
+
+
 
 ## Technologies
 
