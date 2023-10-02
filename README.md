@@ -93,21 +93,174 @@ The site is responsively designed to adapt to the user's viewing device.
 
 ## Home Desktop view
 
- ![Home desktop view](media/home_desktop_view.png)
+ ![Home desktop view](media/home-desktop-image.png)
 
  ## Mobile Home view
 
- ![Mobile Home view](media/home_mobile_view.png)
+ ![Mobile Home view](media/mobile-view-image.png)
  
- ## Log in desktop view
+ ## Sign Up desktop view
 
- ![login desktop view](media/login_desktop_view.png)  
+ ![login desktop view](media/signup-desktop-view.png)  
 
   ## Log in mobile view
 
- ![login mobile view](media/login_mobile_view.png)  
+ ![login mobile view](media/login-mobile-view.png)  
 
  ## Sign up mobile view
 
- ![Sign up mobile view](media/signup_mobile_view.png)  
+ ![Sign up mobile view](media/signup-mobile-view.png)  
+***
+
+## Features
+
+### User Accounts
+
+TrueFit blog features a user account system whereby users can create a persistent account, accessed by username and password, and store blog posts associated with their account, also likes and comments posted on other user's posts are unique to each account to prevent duplicated comments or one user giving unlimited likes to one post.
+
+* Users create accounts by filling in a simple registration form.
+
+![Registration form](media/signup_mobile_view.png)
+
+* Users sign in to their accounts by filling in a login form and sign out using a link in the navigation bar.
+
+![Login form](media/login_mobile_view.png)
+
+* The application uses Django pre written authentication to handle user signup and login functionality.
+
+### Create new articles
+
+One of the two core feature of TrueFit is the ability to create unique posts for each user, even using HTML if the user wanted to for more flexibility on how his article is displayed. Full CRUD (create, read, update, delete) functionality is implemented for blog posts. This means although a visiting user can only read the already posted articles, signed up users can add, delete and edit their own posts while also being able to comment and like other people's posts.
+
+* New blog posts (articles) are added by completing a form, which is located on the main navbar but only for logged in users.
+
+![Add new article by filling a form](media/create_article.png)
+
+* All articles are listed on the home page and the category of each article is color coded.
+
+![List of articles](media/article_list.png)
+
+* Additionally, all users, whether they have an account or not can search for specific topics with the searchbar at the top of the page
+
+![Search bar](media/search_bar.png)
+
+
+* When editing an article, the form is prepopulated with the current values of that article.
+
+![Prepopulated article form](media/edit_article_prepopulated.png)
+
+### Article management
+
+
+* By design, users can only edit or delete their own  articles, as this prevents altering of other people's article posts. This allows the user to remain confident that their articles won't be tampered with.
+
+![View of edit and delete for user's article](media/article_edit_delete_scre.png)
+
+### Donation Page
+
+* In order to be able to support the owner of the website without having to resort to paid ads, I've added a donation page that allows users who haven't signed up to the page to say thanks with a donation with the help of [Stripe](https://stripe.com/)'s API 
+
+![Donation Page](media/donation_page.png)
+
+* In order to test the succes payment and insufficient funds scenarios the user can use this cards:
+
+ Success: 4242 4242 4242 4242
+
+Insufficient funds: 4000 0000 0000 9995
+
+For the Month and date any date in the future can be used, and for the 3 digit security code any 3 digit confirmation can be used
+
+(Please note that only this cards are usable at the moment as the Stripe keys being used are test keys not live keys)
+
+## E-Commerce store
+
+The second core feature of TrueFit is the e-commerce store available for signed-up users, where they can buy training programs and meal plans from the owner of the site. This works with [Stripe](https://stripe.com/)'s API .
+
+* Customers can see a list of the available digital products in the training/diet plans section of the site.
+
+![Digital products list](media/products_list.png)
+
+* Alternatively if the customer wishes to filter the products based on category they can use the dropdown menu at the top
+
+### Shopping bag
+
+The shopping bag allows to see the user to see the total amount of the purchase before proceeding to checkout and it also has the functionality to update and remove the quantity of products
+
+![Shopping bag](media/shopping_bag.png)
+
+### Checkout
+
+The checkout page has a form that collects the necessary data from the customer to create a payment intent with Stripe's API, it also uses Stripe's data validation to prevent the user from submitting the incorrec data which would prevent the order from submitting
+
+![Checkout page](media/checkout.png)
+
+* A very important feature of the checkout process is that TrueFit uses webhooks to protects the owner of the site of having payments going through without orders being submitted to the database. If the buyer closes the window while the order is still being processed, Stripe will save a copy of the order and update the database accordingly later on.
+
+---
+***
+
+## Database Design
+
+TrueFit uses a SQL database. Data is divided into seven collections, with the following schema:
+
+![Datbase diagram](media/updated_data_schema.png)
+
+***
+
+## Future Features
+
+The following features could be added in the future, given more development time:
+
+
+### 1. Account Management Tools
+
+* Helpful account management tools could be provided, such as the ability to update usernames, email addresses and passwords.
+* A password recovery by email function could also be provided. Django authentication tools could be used for this.
+
+### 2. Article Filters
+
+* The ability for all users to filter the articles by category.
+
+ 
+
+### 4. Chat functionality
+
+* The ability to chat with other users of the blog. Django channels could be used for this.
+
+### 5. Code optimization and refactoring
+
+* This was my first major project using Python and Django, so there are a few areas where I feel the code could be made neater and more efficient.
+* In particular, replacing some function based views with class based view
+
+***
+
+## Technologies
+
+### Languages Used
+
+* [HTML5](https://en.wikipedia.org/wiki/HTML5)
+* [CSS3](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.m.wikipedia.org/wiki/JavaScript)
+* [Python](https://en.m.wikipedia.org/wiki/Python_(programming_language))
+
+### Frameworks, Libraries & Programs Used
+
+1. [GitHub](https://github.com/) - Used for version control.
+2. [GitPod](https://gitpod.io/) - Used to write all code and test before deploying to GitHub.
+3. [Balsamiq](https://balsamiq.com/) - Used to produce design wireframes.
+4. [Bootstrap4](https://bootstrap.com/) - Bootstrap 4 CSS framework used extensively to create layout and styling of site.
+5. [Python 3.8](https://www.python.org/) - Used to code the application.
+6. [ElephantSQL](https://www.elephantsql.com/) - Used for the application's database.
+7. [Django](https://www.djangoproject.com/) - Used to build the main application structure and page templates 
+8. [Django storages](https://django-storages.readthedocs.io/en/latest/) - Used to connect web app with Amazon AWS S3 Bucket
+9. [AWS](https://aws.com) Used to store static files
+9. [Heroku](https://heroku.com/) - Used to deploy the site.
+10. [W3C.org](https://www.w3.org/) - W3C [HTML Validator](https://validator.w3.org/nu/) and [CSS Validator](https://jigsaw.w3.org/css-validator/validator) used to check HTML and CSS code for errors.
+11. [JSHint](https://jshint.com/) - Used to check JavaScript for errors.
+12. [Pycodestyle](https://pypi.org/project/pycodestyle/) - Used to check Python code for errors.
+13. [ChatGPT](https://chat.openai.com/chat) - Used to generate dummy articles and to explain and check code
+14. [Stripe](https://stripe.com/) - Used to accept donations
+
+
+
 ***
