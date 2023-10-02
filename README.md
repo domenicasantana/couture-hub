@@ -298,14 +298,11 @@ The following features could be added in the future, given more development time
  ![Mackbook Air Test](media/macbookair-test.png)
 
 
-
-
-
 ## Unit Tests
 
 I created unit tests for the login and signup page with django tests
 
-![Unit tests](media/tests_screenshot.png)
+![Unit tests]()
 
 ---
 # Issues found during site development
@@ -328,7 +325,7 @@ When first creating my project I forgot to add the sqlite database to the .gitig
 
 > Thankfully gitguardian let me know almost instantly that it had happened, so I generated a new secret key and made sure to add the sqlite database to the .gitignore before pushing to github.
 
-![resolved4](media/secret_key_exposed.png)
+![resolved4]()
 
 * ##  Images not loading from Amazon s3 bucket.
 
@@ -337,13 +334,13 @@ This one was a tough one to spot as I was sure that I had followed step by step 
 
 > I have to give credit to the amazing CodeInstitute Slack comunity, which guided me in the right direction, it turns out that the url configuration is specific to the Region where the bucket is, and unlike the US region where the url just ends in ".s3.amazonaws.com" for the EU region the region has to also be added to the url, like the image shows below
 
-![resolved](media/aws_region_bug.png)
+![resolved]()
 
 * ## Webhooks breaking the order submission
 
 As a result of changing the STRIPE_CURRENCY variable at an early stage of the process, the deployed site would get stuck on the loading overlay (Check image) and the order would never be sibmitted to the database, it was very challenging to debug as there was no error to display or console to check as it was only happening on the deplyed site
 
-![loading](media/loading_overlay.png)
+![loading]()
 
 
 ## Performance testing
@@ -358,15 +355,15 @@ Final results:
 I noticed that this tests scores vary from time to time and depends on external libraries as well. 
 
 ## Code Validation
- At the end of the project I used three websites to validate my code:
+ I used this websites to validate my code:
  
  * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) to validate CSS
 
- ![CSS validator](media/css_validator.png)
+ ![CSS validator](media/css-validator.png)
 
  * [Nu Html Checker](https://validator.w3.org/) to test HTML
 
- ![HTML validator](media/html_validation.png)
+ ![HTML validator]()
 
  
  * [Pycodestyle](https://pypi.org/project/pycodestyle/) to test python files
