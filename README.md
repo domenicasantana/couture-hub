@@ -131,7 +131,9 @@ Couture Hub is a web platform designed with user accounts specifically tailored 
 
 ### Create new articles
 
-As a key feature of Couture Hub, it has been implemented Full CRUD functionality for the blog articles. Through the utilization of server-side scripting and a structured database system, users can seamlessly Create, Read, Update, and Delete blog articles. When a user creates a new article, the data is securely stored in our database with a unique identifier. Users can then easily retrieve and view articles they've created or those authored by others. Additionally the websites is allowing users to modify and update their articles as their content evolves which is a big key for the website. For maintaining content quality and relevance, users can also delete articles they no longer wish to keep. This Full CRUD functionality not only enhances the user experience but also ensures that this fashion blog remains dynamic and up-to-date.
+As a crucial key feature of Couture Hub, it has been integrated Full CRUD functionality for the blog articles. This system is designed to ensure that admin user have exclusive access to create, read, update, and delete articles, providing them with comprehensive control over the content. Admin user can effortlessly create new articles, edit existing ones, view the entire article database, and remove outdated content.
+
+On the other hand, regular users are granted read-only access to articles. They can explore, like, comment, and engage with any of the articles available on our platform. This two-tiered approach enhances the user experience, allowing our admin user to curate and manage content while enabling all users to participate in discussions, share insights, and appreciate the fashion blog articles. This Full CRUD functionality, combined with user roles, ensures a well-structured and dynamic blogging environment on Couture Hub.
 
 * New blog posts (articles) are added by completing a form, which is located with a button inside of all articles in the blog page .
 
@@ -146,19 +148,22 @@ As a key feature of Couture Hub, it has been implemented Full CRUD functionality
 
 ![List of articles](media/onlyusers-blog-view.png)
 
-* Only users that have an account can use the search bar and search for specific topics inside of the blog , the bar is located at the bottom of the blog page.
+* Access to the blog is for users only . Inside of the blog page there will be a search bar(search for specific topics inside of the blog) allocated at the bottom of the page .
 
 ![Search bar](media/search_bar.png)
 
 
 * If the person is not registered they will have this message show up .
-
 ![Blog Message](media/blog-blocked-message.png)
 
+* Admin user account : This is the only user that has access to write post on the blog .
+![Admin user page to write articles](media/admin-blog-form.png)
 
-* When editing an article, the form is prepopulated with the current values of that article.
 
-![Prepopulated article form](media/edit_article_prepopulated.png)
+* When editing an article
+
+![Admin account options ](media/admin-blog-bottonwrite.png)
+![Admin account options ](media/admin-blog-editdelete.png)
 
 ### Article management
 
