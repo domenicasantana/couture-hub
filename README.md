@@ -131,19 +131,29 @@ Couture Hub is a web platform designed with user accounts specifically tailored 
 
 ### Create new articles
 
-One of the two core feature of TrueFit is the ability to create unique posts for each user, even using HTML if the user wanted to for more flexibility on how his article is displayed. Full CRUD (create, read, update, delete) functionality is implemented for blog posts. This means although a visiting user can only read the already posted articles, signed up users can add, delete and edit their own posts while also being able to comment and like other people's posts.
+As a key feature of Couture Hub, it has been implemented Full CRUD functionality for the blog articles. Through the utilization of server-side scripting and a structured database system, users can seamlessly Create, Read, Update, and Delete blog articles. When a user creates a new article, the data is securely stored in our database with a unique identifier. Users can then easily retrieve and view articles they've created or those authored by others. Additionally the websites is allowing users to modify and update their articles as their content evolves which is a big key for the website. For maintaining content quality and relevance, users can also delete articles they no longer wish to keep. This Full CRUD functionality not only enhances the user experience but also ensures that this fashion blog remains dynamic and up-to-date.
 
-* New blog posts (articles) are added by completing a form, which is located on the main navbar but only for logged in users.
+* New blog posts (articles) are added by completing a form, which is located with a button inside of all articles in the blog page .
 
-![Add new article by filling a form](media/create_article.png)
+![Go inside of the blog page just for users](media/blog-howto-comment-first.png)
 
-* All articles are listed on the home page and the category of each article is color coded.
+![Inside of the article click on the button add comment](media/blog-howto-comment-two.png)
 
-![List of articles](media/article_list.png)
+![Fill the form](media/blog-howto-form.png)
 
-* Additionally, all users, whether they have an account or not can search for specific topics with the searchbar at the top of the page
+
+* All articles are listed on the home page of the blog page but they need to be log in (Users only feature).
+
+![List of articles](media/onlyusers-blog-view.png)
+
+* Only users that have an account can use the search bar and search for specific topics inside of the blog , the bar is located at the bottom of the blog page.
 
 ![Search bar](media/search_bar.png)
+
+
+* If the person is not registered they will have this message show up .
+
+![Blog Message](media/blog-blocked-message.png)
 
 
 * When editing an article, the form is prepopulated with the current values of that article.
@@ -157,21 +167,6 @@ One of the two core feature of TrueFit is the ability to create unique posts for
 
 ![View of edit and delete for user's article](media/article_edit_delete_scre.png)
 
-### Donation Page
-
-* In order to be able to support the owner of the website without having to resort to paid ads, I've added a donation page that allows users who haven't signed up to the page to say thanks with a donation with the help of [Stripe](https://stripe.com/)'s API 
-
-![Donation Page](media/donation_page.png)
-
-* In order to test the succes payment and insufficient funds scenarios the user can use this cards:
-
- Success: 4242 4242 4242 4242
-
-Insufficient funds: 4000 0000 0000 9995
-
-For the Month and date any date in the future can be used, and for the 3 digit security code any 3 digit confirmation can be used
-
-(Please note that only this cards are usable at the moment as the Stripe keys being used are test keys not live keys)
 
 ## E-Commerce store
 
