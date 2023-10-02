@@ -298,25 +298,25 @@ The following features could be added in the future, given more development time
  ![Mackbook Air Test](media/macbookair-test.png)
 
 
-## Unit Tests
 
-I created unit tests for the login and signup page with django tests
-
-![Unit tests]()
 
 ---
 # Issues found during site development
 
-* ## Edit Article view creating additional article instead of editing existing one
+* ## Edit and delete Article being showed for all users instead of just the admin
 
 
 
-When editing existing articles, once the "Update" button was clicked, the edit article view would create an aditional article onto the database instead of updating the existing one
+The CREATE, UPDATE and DELETE functionality of CoutureHub is meant to be restricted to the admin user only, however, during development, the edit and delete buttons where being displayed for all users if articles where asigned to them by mistake via the admin
 
-> This was due to the action attribute on the form pointing to the "articles:create" url, as I had copy the form from the article_create html template and had forgotten to delete this, all I had to do to fix this error was to delete the action as shown on the picture bellow.
+![testing-issue-1](media/edit_delete_buttons.png)
+
+> I solved this with a jinja double conditional checking not only if the user was logged in but if the name of the user is 'admin'
+![testing-issue-1](media/if_admin_edit_delete.png)
 
 
-![testing-issue-1](media/article_edit_bug.png)
+
+
 
 
 * ## Secret Key being exposed
@@ -325,22 +325,24 @@ When first creating my project I forgot to add the sqlite database to the .gitig
 
 > Thankfully gitguardian let me know almost instantly that it had happened, so I generated a new secret key and made sure to add the sqlite database to the .gitignore before pushing to github.
 
-![resolved4]()
+
 
 * ##  Images not loading from Amazon s3 bucket.
 
 
 This one was a tough one to spot as I was sure that I had followed step by step the tutorial on storing static files on my amazon bucket. When I uploaded my files to my amazon bucket, the deployed site was not displaying any images despite the css styling being applied, telling me that the error was exclusively with the images and not all staticfiles.
 
-> I have to give credit to the amazing CodeInstitute Slack comunity, which guided me in the right direction, it turns out that the url configuration is specific to the Region where the bucket is, and unlike the US region where the url just ends in ".s3.amazonaws.com" for the EU region the region has to also be added to the url, like the image shows below
+> I fixed this by looking at the url on the console of where I was pointing for the location and comparing it to where my images where being stored in aws, by doing that I noticed that there was a difference between the url and my aws directory where my image was actually stored
 
-![resolved]()
+![resolved](media/image_aws.png)
 
 * ## Webhooks breaking the order submission
 
-As a result of changing the STRIPE_CURRENCY variable at an early stage of the process, the deployed site would get stuck on the loading overlay (Check image) and the order would never be sibmitted to the database, it was very challenging to debug as there was no error to display or console to check as it was only happening on the deplyed site
+Using the wrong  WH_SECRET was preventing stripe webhooks from working properly
 
-![loading]()
+> I forgot to create a new WH_SECRET and was using the WH_SECRET that I created for the testing environment, therefore  webhooks where being sent to the wrong endpoint, it was easily solved by creating a new endpoint with the url of the deployed site
+
+![loading](media/stripe_endpoint.png)
 
 
 ## Performance testing
@@ -350,7 +352,7 @@ Screenshots are presented below:
 
 
 Final results:
-![performance_final](media/light_house_truefit.png)
+![performance_final](media/lighthouse-performance.png)
 
 I noticed that this tests scores vary from time to time and depends on external libraries as well. 
 
