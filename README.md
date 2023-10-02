@@ -185,17 +185,17 @@ This is another key feature of Couture Hub website ,it has not only a blog page 
 
 ### Shopping bag
 
-The shopping bag allows to see the user to see the total amount of the purchase before proceeding to checkout and it also has the functionality to update and remove the quantity of products
+The shopping bag feature is a central element of the platform store, allowing customers to easily manage their selections. With this feature, customers can change(update) the quantity of items in their bag and remove items if they no longer wish to purchase. It offers a seamless and user-friendly shopping experience.
 
-![Shopping bag](media/shopping_bag.png)
+![Shopping bag](media/shopping-bag-feature.png)
 
 ### Checkout
 
-The checkout page has a form that collects the necessary data from the customer to create a payment intent with Stripe's API, it also uses Stripe's data validation to prevent the user from submitting the incorrec data which would prevent the order from submitting
+The checkout page has a form which will collect all the customers necessary data . This data is crucial for creating a payment intent using Stripe's API, ensuring a secure and efficient payment process.Additionally, it has been integrated Stripe's data validation mechanisms to prevent users from submitting incorrect information. 
 
-![Checkout page](media/checkout.png)
+![Checkout page](media/checkout-payment.png)
 
-* A very important feature of the checkout process is that TrueFit uses webhooks to protects the owner of the site of having payments going through without orders being submitted to the database. If the buyer closes the window while the order is still being processed, Stripe will save a copy of the order and update the database accordingly later on.
+* Another feature of the checkout is the use of webhooks as this will act as a safety net that ensures that payment-related data and events are reliably captured and processed, even if interruptions occur on the user's end or with the website's operation. This contributes to a more robust and resilient payment system.
 
 ---
 ***
