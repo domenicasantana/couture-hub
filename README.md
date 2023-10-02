@@ -83,12 +83,12 @@ The site is responsively designed to adapt to the user's viewing device.
 
 ### Desktop view wireframe
 
- ![desktop wireframe]()
+ ![desktop wireframe](media/wireframe-desktop.png)
 
 
 ### Mobile view wireframe
 
- ![Mobile wireframe]()
+ ![Mobile wireframe](media/mobile-wireframe.png)
 
 
 ## Home Desktop view
