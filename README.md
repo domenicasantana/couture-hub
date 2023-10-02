@@ -116,17 +116,18 @@ The site is responsively designed to adapt to the user's viewing device.
 
 ### User Accounts
 
-TrueFit blog features a user account system whereby users can create a persistent account, accessed by username and password, and store blog posts associated with their account, also likes and comments posted on other user's posts are unique to each account to prevent duplicated comments or one user giving unlimited likes to one post.
+Couture Hub is a web platform designed with user accounts specifically tailored for our fashion blog. Each user account is associated with a unique identifier, allowing users to interact with our blog features. These features include the ability to like and comment on posts created by other users. We've implemented a relational database schema to efficiently store user data and blog interactions. This functionality fosters an engaging community environment where fashion enthusiasts can share insights, ideas, and trends seamlessly within the web application.
 
-* Users create accounts by filling in a simple registration form.
+* Users can create accounts if they want to use the blog by filling in a simple registration form.
 
-![Registration form](media/signup_mobile_view.png)
+![Registration Form](media/signup-mobile-view.png)
 
-* Users sign in to their accounts by filling in a login form and sign out using a link in the navigation bar.
-
-![Login form](media/login_mobile_view.png)
-
+* Users sign in to their accounts by filling in a login form.
 * The application uses Django pre written authentication to handle user signup and login functionality.
+
+![Login Form](media/login-mobile-view.png)
+
+
 
 ### Create new articles
 
