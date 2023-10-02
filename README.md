@@ -1,8 +1,8 @@
 # Couture Hub website
 
-![Couture Hub]()
+![Couture Hub](media/main-image.png)
 
-[Visit the live site]().
+[Visit the live site](https://couture-hub-d0fb29d40e9a.herokuapp.com/).
 
 The purpose of this application is to help users experience a fashion stylist's digital hub, with useful information of the services that are available, ebooks  while also being able to post articles, like them through the comment section.
 
@@ -163,14 +163,15 @@ On the other hand, regular users are granted read-only access to articles. They 
 * When editing an article
 
 ![Admin account options ](media/admin-blog-bottonwrite.png)
+
 ![Admin account options ](media/admin-blog-editdelete.png)
 
 ### Article management
 
 
-* By design, users can only edit or delete their own  articles, as this prevents altering of other people's article posts. This allows the user to remain confident that their articles won't be tampered with.
+* Admin users are granted Full CRUD access on this website to ensure content quality, data integrity, and security. This approach minimizes the risk of unauthorized changes and data breaches, as admin users are accountable for content and user interactions. By separating content management from user engagement,we provide a more secure and efficient experience for all users.
 
-![View of edit and delete for user's article](media/article_edit_delete_scre.png)
+![View of edit and delete botton](media/admin-blog-editdelete.png)
 
 
 ## E-Commerce store
