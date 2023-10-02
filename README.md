@@ -176,13 +176,12 @@ On the other hand, regular users are granted read-only access to articles. They 
 
 ## E-Commerce store
 
-The second core feature of TrueFit is the e-commerce store available for signed-up users, where they can buy training programs and meal plans from the owner of the site. This works with [Stripe](https://stripe.com/)'s API .
+This is another key feature of Couture Hub website ,it has not only a blog page but an e-commerce store available for everyone (Customers dont need to have an account to have access to the store products). This procedure its done and works with Stripe [Stripe](https://stripe.com/)'s API .
 
-* Customers can see a list of the available digital products in the training/diet plans section of the site.
+* Customers can see all the available products in the STORE page.
 
-![Digital products list](media/products_list.png)
+![products list](media/store-products-view.png)
 
-* Alternatively if the customer wishes to filter the products based on category they can use the dropdown menu at the top
 
 ### Shopping bag
 
